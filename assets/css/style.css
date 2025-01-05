@@ -36,10 +36,10 @@
 html,
 body {
     min-height: 100vh;
+    margin: 0;
 }
 
 body {
-    overflow: hidden;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -47,18 +47,19 @@ body {
 }
 
 .layout-container {
-    width: 375px;
-    height: 812px;
+    width: 100%;
     background-image: url("/assets/images/background-pattern-mobile.svg");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-color: var(--container-background-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 24px;
+    padding: 36% 5%;
 }
 
 .content-container {
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -66,14 +67,13 @@ body {
     background-color: white;
     border-radius: 8px;
     margin: 0;
-    padding: 24px 20px;
+    padding: 8% 5%;
 }
 
 header {
     height: 38px;
     display: flex;
     align-items: center;
-    gap: 20px;
 }
 
 header h1 {
@@ -157,15 +157,24 @@ header img {
 }
 
 @media (min-width: 1440px) {
+
+    body {
+        overflow-y: hidden;
+    }
+
     .layout-container {
-        width: 1440px;
-        height: 900px;
+        min-height: 900px;
         background-image: url("/assets/images/background-pattern-desktop.svg");
+        padding: 12% 5%;
     }
 
     .content-container {
-        width: 600px;
-        padding: 40px;
+        width: 48%;
+        padding: 4% 3% 3%;
+    }
+
+    header {
+        margin-bottom: 2%;
     }
 
     header h1 {
@@ -177,10 +186,6 @@ header img {
     header img {
         width: 40px;
         height: 40px;
-    }
-
-    main {
-        width: 520px;
     }
 
     .faq-question p {
