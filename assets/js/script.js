@@ -10,7 +10,7 @@ buttons.forEach((button) => {
     });
 });
 
-function closeOtherItems(faqItem) {
+const closeOtherItems = (faqItem) => {
     const allFaqItems = document.querySelectorAll(".faq-list-item");
     allFaqItems.forEach((item) => {
         if (item !== faqItem) {
@@ -24,9 +24,9 @@ function closeOtherItems(faqItem) {
             otherButton.setAttribute("aria-expanded", "false");
         }
     });
-}
+};
 
-function toggleActiveState(faqItem, button, answer) {
+const toggleActiveState = (faqItem, button, answer) => {
     const isActive = faqItem.classList.contains("active");
     faqItem.classList.toggle("active");
     button.setAttribute("aria-expanded", !isActive);
@@ -42,4 +42,4 @@ function toggleActiveState(faqItem, button, answer) {
             .querySelector("img")
             .setAttribute("src", "/assets/images/icon-minus.svg");
     }
-}
+};
